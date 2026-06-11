@@ -1,0 +1,791 @@
+.theme-toggle,
+.rtl-toggle{
+  background:none;
+  border:1px solid var(--border);
+  color:var(--txt2);
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  cursor:pointer;
+  transition:border-color .3s,color .3s,background .3s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:.9rem;
+}
+
+.theme-toggle:hover,
+.rtl-toggle:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+  background:rgba(242,193,78,.08);
+}
+
+.theme-toggle:focus-visible,
+.rtl-toggle:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:3px;
+}
+
+.mob-drop-toggle{
+  color:#ffffff !important;
+}
+
+.mob-drop-toggle i{
+  color:#ffffff !important;
+}
+.rtl-toggle span{
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+/* TABLET + MOBILE NAVBAR STYLE */
+
+@media (max-width:1024px){
+
+  .navbar{
+    background:var(--bg) !important;
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+
+    border-bottom:1px solid var(--border);
+
+    box-shadow:0 2px 30px rgba(0,0,0,.15);
+  }
+
+  .nav-container{
+    height:72px;
+  }
+
+  .nav-links{
+    display:none !important;
+  }
+
+  .nav-burger{
+    display:flex !important;
+  }
+
+  .mobile-menu{
+    display:flex;
+  }
+}
+/* ===== FORCE SAME NEWSLETTER PARAGRAPH COLOR IN BOTH THEMES ===== */
+.newsletter .nl-text p,
+[data-theme="light"] .newsletter .nl-text p,
+[data-theme="dark"] .newsletter .nl-text p{
+  color: #CFA96E !important;
+}
+/* ===== FORCE MEMBERSHIP LIST TEXT COLOR IN BOTH THEMES ===== */
+.membership .mem-perks li span,
+.membership .mem-perks li.light-white,
+.membership .light-white{
+  color: #ffffff !important;
+}
+
+/* optional: keep inactive items dimmed */
+.membership .mem-perks li.inactive span{
+  opacity: .45;
+}
+/* ===== FORCE SPIRIT CARD PARAGRAPH COLOR IN BOTH THEMES ===== */
+.spirit-card p,
+[data-theme="light"] .spirit-card p,
+[data-theme="dark"] .spirit-card p{
+  color: #CFA96E !important;
+}
+/* ===== FORCE CTA BAND PARAGRAPH COLOR IN BOTH THEMES ===== */
+.cta-band p,
+[data-theme="light"] .cta-band p,
+[data-theme="dark"] .cta-band p{
+  color: #CFA96E !important;
+}
+/* ===== FORCE SAME COLORS IN BOTH THEMES ===== */
+
+/* sd hero stat labels */
+.sd-hstat-l,
+[data-theme="light"] .sd-hstat-l,
+[data-theme="dark"] .sd-hstat-l{
+  color: #CFA96E !important;
+}
+
+/* package card list items */
+/* sd cta paragraph */
+.sd-cta p,
+[data-theme="light"] .sd-cta p,
+[data-theme="dark"] .sd-cta p{
+  color: #CFA96E !important;
+}
+/* ===== FORCE PACKAGE DESCRIPTION COLOR IN BOTH THEMES ===== */
+.pc-desc,
+[data-theme="light"] .pc-desc,
+[data-theme="dark"] .pc-desc{
+  color: #CFA96E !important;
+}
+.nav-login::after,
+.nav-login:hover::after{
+  display:none !important;
+  content:none !important;
+}/* ───────── Minimal Luxury Section Tag ───────── */
+
+/* apply same styling to BOTH classes */
+.section-tag,
+.stag{
+  display:inline-flex !important;
+  align-items:center;
+  gap:12px;
+
+  padding:0 !important;
+  margin-bottom:18px;
+
+  background:none !important;
+  border:none !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+
+  font-family:var(--font-u);
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+
+  color:var(--gold);
+  line-height:1;
+}
+
+/* elegant side line */
+.section-tag::before,
+.stag::before{
+  content:'';
+  width:42px;
+  height:1px;
+
+  background:linear-gradient(
+    to right,
+    rgba(242,193,78,.18),
+    var(--gold)
+  );
+
+  flex-shrink:0;
+}
+
+/* remove old underline effects */
+.section-tag::after,
+.stag::after{
+  display:none !important;
+}
+/* =========================================================
+   GLOBAL BUTTON OVERRIDE
+   Paste at the VERY END of global.css
+   This will override all previous local button styles
+========================================================= */
+
+/* ALL BUTTON TYPES */
+.btn,
+.btn-primary,
+.btn-outline,
+.btn-ghost,
+.btn-sm,
+.btn-full,
+.nav-cta,
+.nav-login{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:6px !important;
+
+  /* equal compact sizing */
+  padding:10px !important;
+
+  min-width:110px !important;
+  height:38px !important;
+
+  border-radius:4px !important;
+
+  font-family:var(--font-u) !important;
+  font-weight:600 !important;
+  font-size:.78rem !important;
+
+  line-height:1 !important;
+  letter-spacing:.05em !important;
+  text-transform:uppercase !important;
+  white-space:nowrap !important;
+
+  cursor:pointer !important;
+
+  position:relative !important;
+  overflow:hidden !important;
+
+  transition:
+    transform .3s var(--ease),
+    box-shadow .3s,
+    background .3s,
+    border-color .3s !important;
+}
+
+/* Hover overlay */
+.btn::after,
+.nav-cta::after,
+.nav-login::after{
+  content:'' !important;
+  position:absolute !important;
+  inset:0 !important;
+
+  background:rgba(255,255,255,0) !important;
+  transition:background .3s !important;
+}
+
+.btn:hover::after,
+.nav-cta:hover::after,
+.nav-login:hover::after{
+  background:rgba(255,255,255,.06) !important;
+}
+
+/* Focus */
+.btn:focus-visible,
+.nav-cta:focus-visible,
+.nav-login:focus-visible{
+  outline:2px solid var(--gold) !important;
+  outline-offset:3px !important;
+}
+
+/* PRIMARY BUTTONS */
+.btn-primary,
+.nav-cta{
+  background:var(--grad-btn) !important;
+  color:#0c0800 !important;
+
+  border:none !important;
+
+  box-shadow:
+    0 4px 20px rgba(212,160,48,.4) !important;
+}
+
+.btn-primary:hover,
+.nav-cta:hover{
+  transform:translateY(-2px) !important;
+
+  box-shadow:
+    0 8px 32px rgba(242,193,78,.5) !important;
+}
+
+/* GHOST + OUTLINE */
+.btn-ghost,
+.btn-outline,
+.nav-login{
+  background:transparent !important;
+  color:var(--gold) !important;
+
+  border:
+    2.5px solid rgba(242,193,78,.45) !important;
+}
+
+.btn-ghost:hover,
+.btn-outline:hover,
+.nav-login:hover{
+  background:rgba(242,193,78,.07) !important;
+  border-color:var(--gold) !important;
+}
+
+/* SMALL BUTTONS */
+.btn-sm{
+  min-width:auto !important;
+  height:32px !important;
+
+  padding:8px !important;
+
+  font-size:.7rem !important;
+}
+
+/* FULL WIDTH */
+.btn-full{
+  width:100% !important;
+}
+
+/* ICONS */
+.btn i,
+.nav-login i{
+  font-size:.9em !important;
+  line-height:1 !important;
+}
+/* =========================================================
+   GLOBAL HERO / SUBTITLE TYPOGRAPHY OVERRIDE
+   Paste at the END of global.css
+========================================================= */
+
+.ah-sub,
+.bh-sub,
+.ch-sub,
+.hero-sub,
+.hero-desc,
+.sd-hero-sub,
+.sh-sub{
+  font-family:var(--font-h) !important;
+  font-style:italic !important;
+
+  font-size:.95rem !important;
+  color:var(--txt2) !important;
+
+  line-height:1.7 !important;
+
+  max-width:520px !important;
+
+  margin-bottom:36px !important;
+
+  letter-spacing:normal !important;
+  text-transform:none !important;
+  font-weight:400 !important;
+}
+
+/* remove utility-heading styling from ht-sub */
+.ht-sub{
+  display:block !important;
+
+  border-top:none !important;
+  padding-top:0 !important;
+  margin-top:12px !important;
+}
+
+/* responsive consistency */
+@media (max-width:768px){
+
+  .ah-sub,
+  .bh-sub,
+  .ch-sub,
+  .hero-sub,
+  .hero-desc,
+  .sd-hero-sub,
+  .sh-sub{
+    font-size:.95rem !important;
+    line-height:1.7 !important;
+    max-width:100% !important;
+  }
+
+}
+/* =========================================================
+   GLOBAL NEWSLETTER INPUT OVERRIDE
+   Paste at the VERY END of global.css
+========================================================= */
+
+/* form layout */
+.nl-form{
+  display:flex !important;
+  gap:12px !important;
+
+  flex:1 !important;
+  max-width:480px !important;
+
+  flex-wrap:wrap !important;
+}
+
+/* email input */
+.nl-form input,
+.nl-form input[type="email"]{
+  flex:1 !important;
+  min-width:220px !important;
+
+  background:rgba(255,255,255,.05) !important;
+
+  /* always visible gold border */
+  border:1.5px solid rgba(242,193,78,.45) !important;
+
+  border-radius:6px !important;
+
+  /* same height as button */
+  height:38px !important;
+
+  padding:0 16px !important;
+
+  font-family:var(--font-u) !important;
+  font-size:.9rem !important;
+
+  color:#ffffff !important;
+
+  outline:none !important;
+
+  /* permanent glow */
+  box-shadow:
+    0 0 0 1px rgba(242,193,78,.08),
+    0 0 14px rgba(242,193,78,.12) !important;
+
+  transition:
+    border-color .3s,
+    box-shadow .3s,
+    background .3s !important;
+}
+
+/* white placeholder */
+.nl-form input::placeholder,
+.nl-form input[type="email"]::placeholder{
+  color:rgba(255,255,255,.82) !important;
+  opacity:1 !important;
+}
+
+/* stronger glow on focus */
+.nl-form input:focus,
+.nl-form input[type="email"]:focus{
+  border-color:var(--gold) !important;
+
+  box-shadow:
+    0 0 0 2px rgba(242,193,78,.12),
+    0 0 18px rgba(242,193,78,.22) !important;
+
+  background:rgba(255,255,255,.06) !important;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:768px){
+
+  .nl-form{
+    justify-content:center !important;
+  }
+
+  /* center subscribe button */
+  .nl-form .btn,
+  .nl-form button{
+    margin-inline:auto !important;
+  }
+
+}
+/* =========================================================
+   GLOBAL FOOTER HOURS OVERRIDE
+   Paste at the END of global.css
+========================================================= */
+
+/* footer timing rows */
+.footer-hours{
+  display:grid !important;
+  grid-template-columns:110px auto !important;
+
+  align-items:center !important;
+  gap:14px !important;
+
+  width:max-content !important;
+
+  font-family:var(--font-u) !important;
+  font-size:.84rem !important;
+  line-height:1.6 !important;
+
+  color:var(--txt3) !important;
+
+  margin-bottom:6px !important;
+}
+
+/* optional: make day labels brighter */
+.footer-hours strong{
+  color:var(--txt2) !important;
+  font-weight:600 !important;
+}
+
+/* mobile */
+@media (max-width:768px){
+
+  .footer-hours{
+    grid-template-columns:95px auto !important;
+    font-size:.8rem !important;
+  }
+
+}
+/* =========================================================
+   FOOTER RESPONSIVE + LAST COLUMN WIDTH OVERRIDE
+   Paste at END of global.css
+========================================================= */
+
+/* ---------- MAIN GRID ---------- */
+
+.footer-inner{
+  display:grid !important;
+
+  /* wider last column */
+  grid-template-columns:
+    1.2fr
+    .9fr
+    .9fr
+    .7fr
+    1.3fr !important;
+
+  gap:48px !important;
+
+  align-items:flex-start !important;
+}
+
+/* ---------- OPEN HOURS ---------- */
+
+.footer-hours{
+  display:grid !important;
+
+  /* aligned columns */
+  grid-template-columns:90px auto !important;
+
+  gap:12px !important;
+
+  width:max-content !important;
+
+  font-family:var(--font-u) !important;
+  font-size:.84rem !important;
+
+  line-height:1.7 !important;
+
+  color:var(--txt3) !important;
+
+  margin-bottom:6px !important;
+
+  white-space:nowrap !important;
+}
+
+/* address row */
+.footer-addr{
+  display:flex !important;
+  align-items:flex-start !important;
+  gap:8px !important;
+
+  max-width:260px !important;
+
+  line-height:1.6 !important;
+}
+
+.footer-addr i{
+  margin-top:3px !important;
+  flex-shrink:0 !important;
+}
+
+/* footer links */
+.footer-col a{
+  width:max-content !important;
+}
+
+/* prevent overflow */
+.footer *{
+  min-width:0 !important;
+}
+
+/* =========================================================
+   TABLET
+   iPad Mini / Nest Hub / smaller tablets
+========================================================= */
+
+@media (max-width:1024px){
+
+  .footer{
+    padding-top:56px !important;
+  }
+
+  .footer-inner{
+    grid-template-columns:
+      repeat(2,minmax(240px,1fr)) !important;
+
+    gap:40px 32px !important;
+  }
+
+  .footer-brand{
+    grid-column:1 / -1 !important;
+  }
+
+  .footer-brand p{
+    max-width:520px !important;
+  }
+
+  .footer-bottom{
+    padding:18px 20px !important;
+  }
+
+}
+
+/* =========================================================
+   MOBILE
+   Galaxy S8+ and similar
+========================================================= */
+
+@media (max-width:768px){
+
+  .footer{
+    padding-top:48px !important;
+  }
+
+  .footer-inner{
+    grid-template-columns:1fr !important;
+
+    gap:34px !important;
+
+    padding-bottom:40px !important;
+  }
+
+  .footer-brand{
+    text-align:center !important;
+  }
+
+  .footer-brand .nav-logo{
+    justify-content:center !important;
+  }
+
+  .footer-brand p{
+    margin-inline:auto !important;
+    max-width:320px !important;
+  }
+
+  .footer-social{
+    justify-content:center !important;
+  }
+
+  .footer-col{
+    text-align:center !important;
+  }
+
+  .footer-col h4{
+    margin-bottom:14px !important;
+  }
+
+  .footer-col a{
+    width:100% !important;
+  }
+
+  /* centered hours */
+  .footer-hours{
+    margin-inline:auto !important;
+
+    grid-template-columns:
+      90px auto !important;
+
+    text-align:left !important;
+  }
+
+  /* centered address */
+  .footer-addr{
+    justify-content:center !important;
+
+    margin-inline:auto !important;
+
+    text-align:left !important;
+  }
+
+  /* directions button center */
+  .footer-col .ic-link{
+    margin-inline:auto !important;
+  }
+
+  /* top support row */
+  .footer-bottom:first-of-type div{
+    flex-direction:column !important;
+    align-items:center !important;
+    gap:10px !important;
+
+    text-align:center !important;
+  }
+
+  /* bottom copyright row */
+  .footer-bottom:last-of-type{
+    flex-direction:column !important;
+
+    text-align:center !important;
+
+    gap:8px !important;
+  }
+
+}
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width:420px){
+
+  .footer-inner{
+    gap:28px !important;
+  }
+
+  .footer-logo,
+  .logo-text{
+    font-size:1.25rem !important;
+  }
+
+  .footer-hours{
+    font-size:.8rem !important;
+
+    grid-template-columns:
+      84px auto !important;
+  }
+
+  .footer-bottom{
+    font-size:.74rem !important;
+  }
+
+}
+/* GLOBAL NAV CTA + LOGIN BUTTON OVERRIDE */
+
+.nav-cta,
+.nav-login{
+  width:110px !important;
+
+  height:29px !important; /* ~3/4th of 38px */
+
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:5px !important;
+
+  padding:0 12px !important;
+
+  font-size:.66rem !important; /* proportionally smaller */
+  line-height:1 !important;
+  letter-spacing:.05em !important;
+  text-transform:uppercase !important;
+
+  border-radius:4px !important;
+}
+
+/* slightly smaller icon */
+.nav-login i{
+  font-size:.72rem !important;
+}
+@media (max-width:768px){
+
+  .btn,
+  .btn-primary,
+  .btn-outline,
+  .btn-ghost,
+  .btn-sm{
+    display:table !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+}
+/* Make Login behave exactly like Book Now */
+
+.nav-login{
+  position:relative;
+  overflow:hidden;
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease,
+    color .3s ease !important;
+}
+
+.nav-login:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+  border-color:var(--gold);
+  color:var(--txt) !important;
+}
+
+/* Gold underline animation */
+.nav-login::after{
+  content:'';
+  position:absolute;
+  bottom:4px;
+  left:14px;
+  right:14px;
+  height:1.5px;
+  background:var(--gold);
+  transform:scaleX(0);
+  transition:transform .3s ease;
+}
+
+.nav-login:hover::after{
+  transform:scaleX(1);
+}
+.nav-login:hover{
+  background:rgba(242,193,78,.08);
+}
